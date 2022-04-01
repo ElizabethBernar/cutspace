@@ -1,0 +1,176 @@
+$primary-text-color: #323232;
+$active-color: #F78434;
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+//1280px - laptops, screens...
+//480px< - mobile phones
+
+body{
+    margin: 0;
+}
+
+.container{
+    max-width: 1110px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px){
+        max-width: 90%;
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px auto;
+
+    //&-nav = .header-nav
+    &-nav{
+        display: flex;
+
+        @media (max-width: 700px){
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &-link{
+        color: $primary-text-color;
+        text-decoration: none;
+        margin-left: 42px;
+
+        @media (max-width:992px){
+            margin: 10px 20px 0;
+            }
+        }
+    }
+
+    @media (max-width: 992px){
+        flex-direction: column;
+    }
+}
+
+.main-heading, .text{
+    color: $primary-text-color;
+}
+
+.main-heading{
+    font-size: 54px;
+    margin: 0 0 30px;
+    width: 680px;
+    position: relative;
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
+}
+
+.intro-row{
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px){
+        flex-direction: column-reverse;
+    }
+}
+
+.intro-column{
+    width: 52%;
+}
+
+.intro-column:nth-of-type(2){
+    width: 48%;
+
+    img{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .intro-column, .intro-column:nth-of-type(2){
+        width: 100%;
+    }
+}
+
+.intro-form{
+    position: relative;
+    width: 460px;
+    margin-top: 40px;
+
+    .btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:before{
+        content: "";
+        background-image: url(../img/email-icon.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 18px;
+        display: inline-block;
+        position: absolute;
+        top: 21px;
+        left: 28px;
+    }
+}
+
+.intro-input-email{
+    box-shadow: 0px 17px 42px rgba(0, 0, 0, 0.12);
+    border-radius: 50px;
+    border: 0;
+    padding: 17px 200px 17px 72px;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+
+    &::placeholder{
+        color: #bbb;
+    }
+}
+
+@media (max-width: 600px){
+    .intro-form, .intro-input-email{
+    flex-direction: column;
+    width: 100%;
+    }
+}
+
+.btn{
+    display: inline-block;
+    background-color: $active-color;
+    color: white;
+    border: 0;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 17px 37px;
+    cursor: pointer;
+    
+    @media (max-width: 600px){
+        flex-direction: column;
+        margin-top: 75px;
+        margin-left: 0;
+    }
+}
+
+.company-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+
+    @media (max-width: 700px){
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+.company-logo{
+    width: 190px; 
+}
